@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<!--Positioning means that the element is sitting at a certain location, and that we can define that position.-->
+<!--Static Position: the starting/original place for the element based on the law of the web page.-->
+<!--Fixed Position: The element is positioned using a fixed position type; all the other elements are ignoring that element in that law of the webpage.-->
+<!--Relative position: placed relative to it's original position in the law of the webpage. so Apple is placed 20px away from it's original position on the top and left.-->
+<!--Absolute position: -->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Positioning</title>
+        <style>
+         .bluebox {
+             background-color: #3A5795;
+             color: white;
+             height: 100px;
+             width: auto;
+             position: fixed;
+             top: 30px;
+             left: 30px;
+             z-index: 1;
+         }
+         .yellowbox {
+             background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+            position: relative;
+            top: 20px;
+            left: 20px;
+            z-index: 0;
+            }
+        .greenbox {
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+            position: absolute;
+            top: 40px;
+            left: 40px;
+            
+        }
+        .great {
+            background-color: #5a3479;
+        }
+        </style>
+    </head>
+
+    <body>
+       <div class="bluebox">
+           <p>Facebook is <span class="great">great</span>! </p>
+        </div>
+       <div class="yellowbox">
+           <p>Apple</p>
+        </div>
+       <div class="greenbox">
+           <p>Microsoft</p>
+        </div>
+    </body>
+</html>
