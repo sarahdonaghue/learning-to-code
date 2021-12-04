@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Checkout Forms</title>
+    </head>
+
+    <body>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Name" size="30px" maxlength="100">
+            <br />
+            <br />
+            <label for="email">Email:</label>
+            <input type="text" name="email" id="email" placeholder="Email" size="30px" maxlength="100">
+            <br />
+            <br />
+            <label for="address">Address:</label>
+            <input type="text" name="address" id="address" placeholder="Address" size="30px" maxlength="100">
+            <br />
+            <br />
+            <label for="city">City:</label>
+            <input type="text" name="city" id="city" placeholder="City" size="30px" maxlength="100">
+            <br />
+            <br/>
+            <label for="postcode">Post Code:</label>
+            <input type="text" name="postcode" id="postcode" placeholder="Post Code" size="30px" maxlength="100">
+            <br />
+            <br />
+            <p>Choose Your Shipping Method:</p>
+            <select name="shipping" id="shipping" placeholder="Shipping Options">
+                <option value="Free Super Save Shipping">Free Super Saver Shipping</option>
+                <option value="Two Day Shipping">Two Day Shipping</option>
+                <option value="One Day Shipping">One Day Shipping</option>
+            </select>
+            <br />
+            <br />
+            <p>Choose Your Payment Method:</p>
+            <label>PayPal<input type="radio" name="payment" value="paypal"></label>
+            <label>Debit Card<input type="radio" name="payment" value="debit"></label>
+            <label>Credit Card<input type="radio" name="payment" value="credit"></label>
+            <br />
+            <br />
+            <label for="comments">Comments:</label>
+            <textarea rows="4" cols="40" name="comments" id="comments"></textarea>
+            <br />
+            <br />
+            <label>Sign Me Up for Email Updates: <input type="checkbox" name="email updates" checked="checked"></label>
+            <br />
+            <br />
+           <label>Securely Save My Payment Details: <input type="checkbox" name="save payment" checked="checked"></label>
+            <br />
+            <br />
+           <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
