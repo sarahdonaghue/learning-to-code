@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>While Loops</title>
+</head>
+
+<body>
+    <p id="myParagraph">JavaScript.</p>
+    <button onclick="initiateGame()">Start </button>
+    <div id="balance">Current Balance is: $1000</div> 
+    <!-- the above has to be a <div> instead of <p> because we are nesting a p inside of it in the function below. You cannot nest a <p> inside of another <p>.-->
+    <script>
+    var i = 0;
+    while(i<5) {
+        document.getElementById("myParagraph").innerHTML += "<br />" + i;
+        i++;
+    } // once i is equal to 5, the while loop will stop. it will return a number up to but not including 5
+    function initiateGame() {
+    var balance = 1000;
+    var itemsBought = 0;
+    while(balance>0) { //while the balance is positive
+        var itemPrice = Math.floor(Math.random()*100);
+        if(itemPrice <= balance) { //if the itemPrice is less than the balance, then the following code will run.
+            itemsBought += 1; //the number of items bought will increase by 1.
+            balance -= itemPrice; //balance will be decreased by the item price
+            document.getElementById("balance").innerHTML += "<p> Purchase amount: $" + itemPrice + "." + "New Balance: $" + balance + ". </p>";
+        }
+    }
+    document.getElementById("balance").innerHTML += "<p> You bought: " + itemsBought + "items.<p>";
+    }
+
+
+    //Math.random() will return a number from 0 inclusive up to but not including 1. If we multiply by 100 we will get a number from 0 inclusive up to but not including 100. 
+    //The Math.floor() function returns the largest integer less than or equal to a given number. So Math.floor(99.9) = 99. 
+    // The Math.round() function returns the value of a number rounded to the nearest integer. So Math.round(99.9) = 100. 
+    </script>
+</body>
+
+</html>

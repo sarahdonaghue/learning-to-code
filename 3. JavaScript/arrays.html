@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>Arrays</title>
+</head>
+
+<body>
+    <p id="myParagraph">JavaScript.</p>
+    <script>
+        // Arrays can contain any kind of value: strings, numbers, etc. 
+         var shoppingList = ["bread", "eggs", "milk"];
+        // var shoppingList = new Array("bread", "eggs", "milk"); You can use either method, but the first is more efficient.
+        // document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList;
+        // the += adds the shoppingList under the word Javascript
+        // document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList[0];
+        // document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList[2];
+        // the number in the brackets refers to the index of the Array. In JS arrays are zero indexed. 
+        showResult(shoppingList);
+        showResult(shoppingList[0]);
+        showResult(shoppingList[2]);
+
+        function showResult(x){
+            document.getElementById("myParagraph").innerHTML += "<br />" + x;
+        }
+        shoppingList[1] = "yogurt";  //changes the item in that index
+        showResult(shoppingList);
+        shoppingList[2] = "orange";
+        showResult(shoppingList);
+        
+        delete shoppingList[1]; // deletes the value from an array. It will show up as undefined.
+        showResult(shoppingList);
+        
+        shoppingList[1] = "yogurt";
+        showResult(shoppingList);
+        
+        shoppingList.splice(1,1); // .splice will delete the element completely from the array. 
+        showResult(shoppingList); 
+        
+        shoppingList.splice(1,0,"banana", "apple"); // will add items to where the splice happened
+        showResult(shoppingList);
+        
+        shoppingList.sort();
+        showResult(shoppingList); // will sort the items in an array alphabetically
+        
+        shoppingList.reverse();
+        showResult(shoppingList); // will sort the items in an array in reverse alphabetical order
+        
+        var myString = 'ABCD';
+        var myArray = myString.split(''); // will split up the array into individual characters. '' will include spaces. Creates an arrya using a string.
+        showResult(myArray);
+
+        
+
+
+    </script>
+</body>
+
+</html>

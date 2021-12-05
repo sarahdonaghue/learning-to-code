@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>Cookies</title>
+</head>
+
+<body>
+    <p id="myParagraph">JavaScript.</p>
+    <script>
+        document.cookie = "username = buenosdias";
+        document.cookie = "age = 28";
+        document.cookie = "country = Spain";
+        window.alert(document.cookie);
+        var cookie = document.cookie.split(';');
+        window.alert(cookie);
+        
+
+        for(i=0; i<cookie.length; i++){
+            document.getElementById("myParagraph").innerHTML += "<br />" + cookie[i];
+        }
+
+        // if you delete all of the code, and then write window.alert(document.cookie); all of the cookies will still show up in the alert. 
+    </script>
+</body>
+
+</html>

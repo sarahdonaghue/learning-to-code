@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>Regular Expressions</title>
+</head>
+
+<body>
+    <p>String: <span id="string"></span></p>
+    <p>Pattern: <span id="pattern"></span></p>
+    <p>Result(search): <span id="search"></span></p>
+    <p>Result(match): <span id="match"></span></p>
+    <p>Result(test): <span id="test"></span></p>
+    <script>
+        var str = "Atlanta 578375%";
+        // var pattern = /[a-z]/g; will look for all letters between a-z exclusive. 
+        // var pattern = /[^atn]/g;  will look for specific letters
+        // var pattern = /[4-7]/g; will look for numbers
+        // var pattern = /\d/g; will look for digits
+        // var pattern = /\w/g; will look for all alphanumeric characters
+        // var pattern = /\W/g; will look for non-alphanumeric characters
+        // var pattern = /\s/g; will look for a space
+        // var pattern = /\d{4}/g; will look for the number of digits for a specific number
+        // var pattern = /^A/g; will look for a specific capital letter
+        // var pattern = /\n/g; will check if there is a line break character
+        
+        //the pattern will look for the letter between two slashes. the modifier (i) will make sure it looks for lowercase letters and uppercase letters. ignore case. if the modifier is g or global it will be case sensitive. 
+        // window.alert(str.search(pattern)); //will return the position of the first instane of the letter
+
+        // window.alert(str.match(pattern)); //will return exactly what is in the string that matches. 
+
+        //window.alert(pattern.test(str)); //will return a boolean if that pattern is in the string or not. 
+
+        document.getElementById("string").innerHTML = str;
+        document.getElementById("pattern").innerHTML = pattern;
+        document.getElementById("search").innerHTML = str.search(pattern);
+        document.getElementById("match").innerHTML = str.match(pattern);
+        document.getElementById("test").innerHTML = pattern.test(str);
+
+    </script>
+</body>
+
+</html>

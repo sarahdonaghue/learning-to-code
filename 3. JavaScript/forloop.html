@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>For Loops</title>
+</head>
+
+<body>
+    <p id="myParagraph">JavaScript.</p>
+    <script>
+        // this is a lot to write out ever time it is need, especially if you are dealing with large numbers. It is much simpler to use a for loop.
+        // document.getElementById("myParagraph").innerHTML += "<br />" + 0;
+        // document.getElementById("myParagraph").innerHTML += "<br />" + 1;
+        // document.getElementById("myParagraph").innerHTML += "<br />" + 2;
+        // document.getElementById("myParagraph").innerHTML += "<br />" + 3;
+        // document.getElementById("myParagraph").innerHTML += "<br />" + 4;
+        
+        for(i=0; i<5; i++){ //this code will run once for every time it is 0, and then for every time that i is less than 5 the code will run and add 1 to i. i++ means that 1 will be added to i every time the code is run. 
+            document.getElementById("myParagraph").innerHTML += "<br />" + i;
+        }
+
+        for(i=7; i>0; i--) { //initiates i at 7. It checks the condition if i is greater than 0, and makes i go down by 1 every time the code is run until it reaches 0. 
+            document.getElementById("myParagraph").innerHTML += "<br />" + Math.pow(i,2); // this makes i go to the power of 2
+        }
+
+        var shoppingList = ["bread", "milk", "eggs"];
+        for(i=0; i<shoppingList.length; i++) { // the condition is technichally i<3 because that is the length of the array. So for every time the code runs, and it is less than 3, it will print that index of the array, and add 1. 
+            document.getElementById("myParagraph").innerHTML += "<br />" + shoppingList[i];
+        } // this adds the item values of the array to the paragraph following a line break. i is the index of the array.
+
+        var numberList = [1, 2, 3]; // we want to increase each of these numbers by 10.
+        for(i=0; i<numberList.length; i++){
+            numberList[i] += 10;
+        }
+        document.getElementById("myParagraph").innerHTML += "<br />" + numberList;
+        
+    </script>
+</body>
+
+</html>

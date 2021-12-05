@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf8">
+    <title>Errors</title>
+    <style>
+        #error{
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="error" ></p>
+    <script>
+        //a try statement will allow us to use a piece of code and test it for errors.
+        try{
+            sum(3,4);
+        }
+        //a catch statement will execute if there is an error.
+        catch(err){
+            document.getElementById("error").innerHTML = err.message;
+        }
+    </script>
+</body>
+
+</html>
