@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>Draggable & Droppable</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+       
+        .great{
+            background-color: #5a3479;
+        }
+        
+        #droppable{
+            background-color: #b513eb;
+            height: 300px;
+            width: auto;   
+            margin-top: 20px;
+            color: white;
+        }
+        
+
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        
+    </head>
+       
+        <body>
+            
+
+            <div class="bluebox ui-corner-all" id="facebook">
+                <p> Facebook is <span class="great" id="great">great</span></p>
+            </div>
+                
+            <div class="yellowbox ui-corner-all" id="apple">
+                <ul id="list">
+                    <li>Eggs</li>
+                    <li>Milk</li>
+                    <li>Bread</li>
+                </ul>
+            </div>
+            
+            <div class="greenbox ui-corner-all" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink"> Microsoft Link.</a>
+                </p>
+            </div>
+
+            <div id="droppable" class="ui-corner-all"><p>You can drop things here!</p></div>
+            
+           
+        </body>
+            
+            <script>
+                var message = ["Please!", "Leave Me Alone!", "Drop Me!", "Stop!"];
+
+                $(function(){
+                   $("#facebook").draggable();
+                   $("#apple").draggable({
+                       axis: "y"   //only draggable alon the y-axis (up & down)
+                   });
+                //    $("#microsoft").draggable({
+                //        revert: true  //the draggable element will go back to it's original location
+                //    });
+                   
+                // This function below will change the color of the divs when they are dragged
+                $("#microsoft").draggable({    
+                       revert: true,
+                       start: function(){
+                           $("#facebook").css("background-color", "#43c8d4");  
+                       },
+                       drag: function(){
+                        $("#microsoft").css({'top': 200*Math.random(), 'left': 200*Math.random(), 'background-color': 'rgb(' + 
+                        Math.floor(200*Math.random()) + ',' + 
+                        Math.floor(200*Math.random()) + ',' + 
+                        Math.floor(200*Math.random()) + ')'});
+                        $("#microsoft").find("p").html(message[Math.floor(4*Math.random())]);
+                        },
+                        stop: function(){
+                            $("#apple").css("background-color", '#b1e269');
+                            $("#microsoft").html('<p>Finally!</p>'); //changes text to 'finally' when it reverts back to the starting posiition
+                        }
+                   });
+                   $("#droppable").droppable({  //draggable elements can be dropped in the droppable space
+                       drop: function(event,ui){
+                           $(this).css("background-color",'#21dd85'); //changes the droppable space color when something is dropped there.
+                       $(this).find("p").remove();
+                       $("<div></div>").text(ui.draggable.text()).appendTo(this);   //it is not a good idea to place an <li> directly inside a div, as these usually go inside a list element like ul. The code will work with li, but it is not good practice.
+                        },
+                       accept: "#list li" //will only accept what is put here
+                   });
+                   $("#list").find("li").draggable({
+                       helper: "clone",  
+                       appendTo: "body"
+                   });
+                });
+            </script>
+
+            
+</html>
+
+        

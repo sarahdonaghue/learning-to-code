@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>Sortable</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: auto;
+            width: auto;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: auto;
+            width: auto;
+           
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+            
+        }
+       
+        #great{
+            background-color: #5a3479;
+        }
+        .ui-menu{
+            width: 100px;
+        }
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        
+    </head>
+       
+        <body>
+            
+
+            <div class="bluebox ui-corner-all" id="facebook">
+                <ul id="continents">
+                    <li>Europe
+                        <ul>
+                            <li>France</li>
+                            <li>UK
+                                <ul>
+                                    <li>England</li>
+                                    <li>Scotland</li>
+                                    <li>Wales</li>
+                                    <li>Northern Ireland</li>
+                                </ul>
+                            </li>
+                            <li>Spain</li>
+                        </ul>
+                    </li>
+                    <li>Africa</li>
+                    <li>Americas</li>
+                    <li>Asia</li>
+                    <li>Australia</li>
+                </ul>
+            </div>
+                
+         
+            <div class="yellowbox ui-corner-all" id="apple">
+                <ul id="continents2">
+                    <li class="ui-widget-header">Europe</li>
+                            <li>France</li>
+                            <li>UK
+                                <ul>
+                                    <li>England</li>
+                                    <li>Scotland</li>
+                                    <li>Wales</li>
+                                    <li>Northern Ireland</li>
+                                </ul>
+                            </li>
+                            <li>Spain</li>
+                    </li>
+                    <li class="ui-widget-header">Africa</li>
+                    <li class="ui-widget-header">Americas</li>
+                    <li class="ui-widget-header">Asia</li>
+                    <li class="ui-widget-header">Australia</li>
+                </ul>
+             </div>
+         
+            
+            <div class="greenbox ui-corner-all" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                
+                </p>
+                
+            </div>
+            
+           
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#continents").menu();
+                   $("#continents2").menu();
+                });
+            </script>
+
+            
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!-- Ajax stands for Asynchronous Javascript an XML. It is used to exchange data between a webpage and a server. Websites like facebook and gmail use Ajax to change parts of the webpage without having to reload the page every time. it helps create a better experience for the user.  -->
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>Ajax</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: 300px;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+       
+        .great{
+            background-color: #5a3479;
+        }
+        
+
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+        
+    </head>
+       
+        <body>
+            <button>Button</button>
+
+            <div class="bluebox" id="facebook">
+                <p> Facebook is <span class="great" id="great">great</span></p>
+            </div>
+                
+            <div class="yellowbox sans-serif" id="apple">
+                <p>Apple.</p>
+            </div>
+            
+            <div class="greenbox" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink"> Microsoft Link.</a>
+                </p>
+            </div>
+            
+            <p>Enter your name:<input></p>
+           
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#facebook").load("ajax/somedata.txt");
+
+                   $("#apple").load("ajax/somedata.txt #paragraph1")
+                   // loads data from external resources. able to load just certain parts of it by using the id. 
+
+                //    $("button").click(function(){
+                //     $.ajax({url : "ajax/somedata.txt", success : function(data){
+                //         $("#microsoft").html(data);
+                //     }}); 
+                //    });
+                // the first line loads the data from the URL, and the success function put data inside a variable called data. Then we execute the function using the variable to store the content of the file we're loading
+                
+
+
+                $("button").click(function(){
+                    $.ajax({url : "ajax/somedata.txt"}).done(function(data){
+                        $("#microsoft").html(data);
+                    })
+                });
+
+                });
+            </script>
+</html>
+
+        

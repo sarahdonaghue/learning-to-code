@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- jQuery UI is a curated set of user interface (UI) interactions, effects, widgets, and themes, built on top of the jQuery JavaScript Library. (From jqueryui.com) -->
+
+<!-- we use these items to make the webpage more user interactive -->
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>jQuery UI</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: 300px;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+       
+        .great{
+            background-color: #5a3479;
+        }
+        
+
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        
+    </head>
+       
+        <body>
+            
+
+            <div class="bluebox ui-corner-all" id="facebook">
+                <p> Facebook is <span class="great" id="great">great</span></p>
+            </div>
+                
+            <div class="yellowbox ui-corner-all" id="apple">
+                <p>Apple.</p>
+            </div>
+            
+            <div class="greenbox ui-corner-all" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink"> Microsoft Link.</a>
+                </p>
+            </div>
+            <div class="ui-state-error" style="height:100px; margin-top:20px">
+                <p>Error Message</p>
+            </div>
+           
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#facebook").draggable(); // with draggable you can pull the divs around on the screen! 
+
+                });
+            </script>
+</html>
+
+        

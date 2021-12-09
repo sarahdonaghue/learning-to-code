@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <metacharset ="utf-8">
+        <title>jQuery Effects</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: 300px;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+        }
+       
+        .great{
+            background-color: #5a3479;
+        }
+        
+        p{
+            margin: 0;
+        }
+
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+        </script>
+        
+    </head>
+       
+        <body>
+            <button id="fadeOutFacebook">FadeOut Facebook</button>
+            <button id="fadeInFacebook">FadeIn Facebook</button>
+            <button id="fadeToggle">FadeToggle</button>
+            <button id="animate">Animate</button>
+
+            <div class="bluebox" id="facebook">
+                <p> Facebook is <span class="great" id="great">great</span></p>
+            </div>
+                
+            <div class="yellowbox sans-serif" id="apple">
+                <p>Apple.</p>
+            </div>
+            
+            <div class="greenbox" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink"> Microsoft Link.</a>
+                </p>
+            </div>
+            
+            <p>Enter your name:<input></p>
+           
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#fadeOutFacebook").click(function(){
+                       $("#facebook").fadeOut(3000, function(){windwo.alert("Hi!")}); //you can use a window alert, a number of miliseconds, slow, fast. 
+                   });
+
+                   $("#fadeInFacebook").click(function(){
+                       $("#facebook").fadeIn("fast");
+                   });
+
+                   $("#fadeToggle").click(function(){
+                       $("#facebook").fadeToggle(1000);
+                       $("#apple").fadeToggle(2000);
+                       $("#microsoft").fadeToggle(3000);
+                   });
+
+                //    $("#animate").click(function(){
+                //        $("#facebook").animate({width:'200px', height:'50px', opacity:'0.5'},6000);
+                //    });
+
+                $("#animate").click(function(){
+                    $("#facebook").animate({width:'200px'}, "slow");
+                    $("#facebook").animate({height:'300px'}, "slow");
+                    $("#facebook").animate({height:'100px'}, "slow");
+                    $("#facebook").delay(3000).animate({width:'300px'}, "slow"); //.delay will delay the animation by 3seconds. All of these animations will run in sequence. 
+                });
+                });
+            </script>
+</html>
+
+        

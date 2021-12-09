@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <title>Embedding jQuery & Syntax</title>
+        <!-- <script src="js/jquery-3.6.0.min.js"> // this imports the jQuery library. 
+        </script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        </script>  <!--using a google cdn instead of hosting the library ourselves can result in faster loading times, cdns make sure the download is done using the loaded server.-->
+    </head>
+    <body>
+        <p id="myParagraph">jQuery</p>
+        <script>
+            // $(document).ready(function(){
+                $(function(){ //shorter way to write the code above it.
+                $("p").hide();
+            });
+        </script>
+    </body>
+</html>

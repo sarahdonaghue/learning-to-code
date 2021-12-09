@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>Sliders</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+           
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+            margin-bottom: 30px;
+            
+        }
+        #sliderValue, #mileageRange{
+            color: #2074cf;
+            border: 0;
+            font-weight: bold;
+        }
+       
+        #great{
+            background-color: #5a3479;
+        }
+    
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        
+    </head>
+       
+        <body>
+            
+
+            <div class="bluebox ui-corner-all" id="facebook">
+                <p> Facebook is <span class="great" id="great">great</span></p>
+            </div>
+                
+         
+            <div class="yellowbox ui-corner-all" id="apple">
+               <p>Apple</p>
+             </div>
+         
+            
+            <div class="greenbox ui-corner-all" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                
+                
+            </div>
+            
+           <div id="slider"></div>
+           <br>
+           <label for="slider">Value:</label>
+           <input type="text" id="sliderValue" readonly>  
+           <!-- the read only tag makes it so the reader/user cannot input anything into the field. -->
+            <br>
+            <br>
+            <br>
+            <br>
+           <div id="rangeSlider"></div>
+            <br>
+            <label for="rangeSlider">Mileage:</label>
+            <input type="text" id="mileageRange" readonly>  
+            
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#slider").slider({
+                        slide: function(event, ui){
+                            $("#sliderValue").val(ui.value); //by default, the min value is 0 and the max value is 100. these can be changed by adding other properties.
+                        },
+                        min: 0,
+                        max: 25
+                   });
+                   $("#sliderValue").val(0);  //sets the value to 0 at the beginning so the input box is not empty
+
+
+                   $("#rangeSlider").slider({
+                       range: true,
+                       min: 0,
+                       max: 100000,
+                       step: 1000,  //the value is increasing or decreasing by 1000 every time the slider is moved
+                       values: [0, 10000],  //the starting points for the slider
+                       slide: function(event, ui){
+                           $("#mileageRange").val(ui.values[0]+ " miles - " + ui.values[1] + " miles");
+                       }
+                   });
+                   $("#mileageRange").val($("#rangeSlider").slider("values",0)+ " miles - " + $("#rangeSlider").slider("values",1) + " miles");  //the starting values for the range. 
+                });
+            </script>
+
+            
+</html>

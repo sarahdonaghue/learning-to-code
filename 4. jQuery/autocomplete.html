@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>Autocomplete</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;          
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto; 
+        }
+       
+        #great{
+            background-color: #5a3479;
+        }
+        .ui-autocompleete{
+            max-height: 100px;
+            overflow-y: auto;
+            max-width: 200px;
+            overflow-x: hidden;
+        }
+        #city{
+            width: 200px;
+        }
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        
+    </head>
+       
+        <body>
+            
+
+            <div class="bluebox ui-corner-all" id="facebook">
+                <p> Facebook is <span class="great" id="great">great</span></p>
+                <p>Input Your City <input id="city"> </p>
+            </div>
+                
+         
+            <div class="yellowbox ui-corner-all" id="apple">
+               <p>Apple</p>
+             </div>
+         
+            
+            <div class="greenbox ui-corner-all" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftLink"> Microsoft Link.</a>
+                </p>
+                
+            </div>
+            
+           
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#city").autocomplete({
+                       source: ["London", "Paris", "Washington", "New York", "Madrid", "Seattle", "Toronto", "Vancouver", "Los Angeles", "Miami", "Rome", "Cape Town", "Dehli", "Hong Kong", "Tokyo", "Sydney", "Moscow"]    //this property can be set to an array of strings
+                   });
+                });
+            </script>
+
+            
+</html>

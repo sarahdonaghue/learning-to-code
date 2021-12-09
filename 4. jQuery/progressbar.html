@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>Progress Bar</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+           
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+            
+        }
+       
+        #great{
+            background-color: #5a3479;
+        }
+        #label{
+            position: absolute;
+            left: 45%;
+        }
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/start/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        
+    </head>
+       
+        <body>
+            
+
+            <div class="bluebox ui-corner-all" id="facebook">
+                <p> Facebook is <span class="great" id="great">great</span></p>
+            </div>
+                
+         
+            <div class="yellowbox ui-corner-all" id="apple">
+               <p>Apple</p>
+             </div>
+         
+            
+            <div class="greenbox ui-corner-all" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+            </div>
+            
+            <div id="progress">
+                <div id="label">
+                
+                </div>
+            </div>
+            <button>Run</button>
+           
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#progress").progressbar({
+                       value: 0
+                   });
+                   var x = 0;
+                   $("button").click(function(){
+                    $("#label").text("In progress ...");
+
+                    setTimeout(function(){  //placing the progressbar function inside of the timout makes the text stay for a second (1000ms) before disappearing and having the progress bar start
+                        var progress = setInterval(function(){
+                        x++;
+                        $("#label").text(x+ '%');
+                        $("#progress").progressbar("option", "value", x);
+                        if(x>99){
+                            clearInterval(progress);
+                        }
+                    },100);
+                    },1000);
+                   });
+                });
+            </script>
+
+            
+</html>

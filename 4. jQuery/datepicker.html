@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+    <head> 
+        <metacharset ="utf-8">
+        <title>Date Picker</title>
+        <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: white;
+            height: 100px;
+            width: auto;
+        }
+        
+        .yellowbox{
+            background-color: rgb(222, 224, 85);
+            height: 100px;
+            width: auto;
+           
+        }
+        
+        .greenbox{
+            background-color: #31af37;
+            height: 100px;
+            width: auto;
+            
+        }
+       
+        #great{
+            background-color: #5a3479;
+        }
+        </style>
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+       
+        
+    </head>
+       
+        <body>
+            
+
+            <div class="bluebox ui-corner-all" id="facebook">
+                <p> Flight Departure Dates: <input id="departure"></p>
+                <p>Flight Return Dates: <input id="return"></p>
+            </div>
+                
+         
+            <div class="yellowbox ui-corner-all" id="apple">
+               <p>Apple</p>
+             </div>
+         
+            
+            <div class="greenbox ui-corner-all" id="microsoft">
+                <p id="microsoftParagraph"> Microsoft.</p>
+                
+                </p>
+                
+            </div>
+            
+           
+        </body>
+            
+            <script>
+                $(function(){
+                   $("#departure").datepicker({
+                       showAnim: "fadeIn",
+                       changeYear: true,
+                       numberOfMonths: 2,
+                       dateFormat: "mm/dd/yy",
+                    //    dateFormat: "M/dd/yy"
+                    //    dateFormat: "m/dd/yy"
+                    //    dateFormat: "MM/D/y"
+                    //    dateFormat: "MM/DD/yyyy"
+                    //    dateFormat: "d M, y"
+                        showOn: "button",
+                        buttonImage: "images/calendar.png",
+                        buttonText: "Choose your departure date.",
+                        minDate: +1,  //today's date +1
+                        maxDate: "+12M +10D", //today + 12months + 10days 
+                        onClose: function(selectedDate){
+                            $("#return").datepicker("option", "minDate", selectedDate); //makes the return date calendar start where the departuer date left off at your selected date
+                        }
+
+                   });
+                   $("#return").datepicker({
+                       dateFormate: "mm/dd/yy",
+                   });
+                });
+            </script>
+
+            
+</html>
+
+        

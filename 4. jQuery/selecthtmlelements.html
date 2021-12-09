@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Select HTML Elements</title>
+        <style>
+         .bluebox {
+             background-color: #3A5795;
+             color: white;
+             height: auto;
+             width: auto;
+         }
+         .yellowbox {
+             background-color: rgb(222, 224, 85);
+            height: auto;
+            width: auto;
+            }
+        .greenbox {
+            background-color: #31af37;
+            height: auto;
+            width: auto;
+        }
+        .great {
+            background-color: #5a3479;
+        }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js">
+        </script>
+    </head>
+
+    <body>
+       <div class="bluebox">
+           <p>Facebook is <span id="great">great</span>! </p>
+           <p class="orange">Paragraph 2</p>
+           <p>Paragraph 3</p>
+        </div>
+       <div class="yellowbox">
+           <p>Apple</p>
+           <ul>
+               <li>BMW</li>
+               <li>Audi</li>
+               <li>Mercedies</li>
+           </ul>
+           <p><a href="https://www.google.com">This is a link</a></p>
+           <p><a href="http://www.microsoft.com">This is another link</a></p>
+        </div> 
+        <p>a paragraph</p>
+       <div class="greenbox">
+           <p>Microsoft</p>
+           <ul>
+            <li>BMW</li>
+            <li>Audi</li>
+            <li>Mercedies</li>
+        </ul>
+        <table>
+            <tr><th>Phone Brand:</th><th>Model</th><th>Model</th></tr>
+            <tr><td>Apple</td><td>iPhone</td><td>16GB</td></tr>
+            <tr><td>Apple</td><td>iPhone</td><td>16GB</td></tr>
+            <tr><td>Apple</td><td>iPhone</td><td>16GB</td></tr>
+            <tr><td>Apple</td><td>iPhone</td><td>16GB</td></tr>
+            <tr><td>Apple</td><td>iPhone</td><td>16GB</td></tr>
+        </table>
+
+           <p>Type your name:<input><button type="submit">Submit</button></p>
+        
+        </div>
+        <script>
+            $(function(){
+                $("*").css("font-size", '16px'); // selects all of the elements of a webpage. Then changes the css. the function takes two parameters, the first is the style we want to change, and the second is what we are changing it to, the value.
+
+                // $("p").css("text-align", "center");
+                // $("div > p").css("text-align", "center"); // paragraphs inside of divs
+                // $("div ~ p").css("text-align", "center"); // this works for any p that are sidelined by divs
+                $("div  p").css("text-align", "center"); //paragraphs that are children of divs
+
+                $("#great").css("background-color", "#6acb57");
+                $(".orange").css("background-color", "orange");
+                $("div.bluebox").css("font-family", "sans-serif");
+
+                // $("p:first-child").css("text-decoration", "underline");
+                // $("p:last-child").css("text-decoration", "underline");
+                $("p:first-child, p:last-child").css("text-decoration", "underline");
+
+                $("[href]").css("color", "red");
+
+                $("li:first-child, li:last-child").css("background-color", "#bbf362");
+
+                $("tr:even").css("background-color", "red"); //changes the even tables. you can do the same thing with odd rows.
+
+                $("tr:odd").css("background-color", "lightblue");
+
+                $(":input").css("background-color", "lightpink");    
+                $(":submit").css("background-color", "#7979eb");
+
+                $("div:has(table)").css("background-color","purple");
+        })
+        </script>
+    </body>
+</html>
